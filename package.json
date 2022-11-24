@@ -1,6 +1,5 @@
 {
   "name": "new-tab",
-  "homepage": "https://maximsmajda.github.io/new-tab",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
