@@ -1,0 +1,151 @@
+@mixin dark {
+	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.27);
+	-webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.27);
+	-moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.27);
+	background-color: rgba(0, 0, 0, 0.25);
+}
+
+@mixin light {
+	box-shadow: 0px 0px 6px 0px rgba(86, 86, 86, 0.27);
+	-webkit-box-shadow: 0px 0px 6px 0px rgba(86, 86, 86, 0.27);
+	-moz-box-shadow: 0px 0px 6px 0px rgba(86, 86, 86, 0.27);
+
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+::-webkit-scrollbar {
+	width: 3px;
+	color: black;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+html,
+body,
+#root {
+	height: 100vh;
+	width: 100%;
+
+	margin: 0;
+	padding: 0;
+}
+
+#root {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.app {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	font-family: "Lato", sans-serif;
+
+	&.light {
+		background: rgb(255, 255, 255);
+		background: radial-gradient(
+			circle,
+			rgba(255, 255, 255, 1) 0%,
+			rgba(255, 255, 255, 1) 50%,
+			rgba(238, 238, 238, 1) 91%,
+			rgba(224, 224, 224, 1) 100%
+		);
+	}
+
+	&.dark {
+		background: rgb(13, 13, 13);
+		background: radial-gradient(
+			circle,
+			rgba(13, 13, 13, 1) 0%,
+			rgba(25, 25, 25, 1) 50%,
+			rgba(32, 29, 29, 1) 100%
+		);
+
+		color: #fff;
+	}
+}
+
+.light {
+	@include light;
+}
+
+.dark {
+	@include dark;
+}
+
+.main {
+	display: flex;
+	justify-content: space-between;
+	height: 85%;
+	width: 90%;
+	padding-bottom: 1.4rem;
+}
+
+.widgets {
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+	height: 100%;
+}
+
+.component {
+	display: flex;
+	height: auto;
+	flex-direction: column;
+	margin: 0.4rem 0;
+	padding: 1.6rem;
+	border-radius: 0.4rem;
+
+	&.light {
+		@include light;
+	}
+
+	&.dark {
+		@include dark;
+	}
+}
+
+.delete-button {
+	text-align: center;
+	cursor: pointer;
+
+	transform: rotate(45deg);
+	font-weight: bold;
+	border-radius: 50%;
+
+	transition: all 0.2s ease-in-out;
+
+	width: 2rem;
+	height: 2rem;
+	line-height: 1.9rem;
+	font-size: 2rem;
+	background: none;
+	box-shadow: none;
+
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	&.light:hover {
+		transform: scale(1.04) rotate(135deg);
+		@include light;
+	}
+
+	&.dark:hover {
+		transform: scale(1.04) rotate(135deg);
+		@include dark;
+	}
+}

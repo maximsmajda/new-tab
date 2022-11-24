@@ -1,0 +1,49 @@
+.header {
+	display: flex;
+	flex-direction: row;
+	height: 15%;
+	width: 90%;
+}
+
+.time {
+	width: 94%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	h2 {
+		font-weight: normal;
+		font-size: 1.2rem;
+
+		span {
+			font-weight: bold;
+			font-size: 2rem;
+			margin-right: 0.6rem;
+		}
+	}
+}
+
+.color-toggle-wrapper {
+	width: 6%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.1s ease-in-out;
+
+	.day-icon {
+		max-width: 50%;
+	}
+
+	.night-icon {
+		max-width: 40%;
+		color: #fff;
+	}
+
+	&:hover {
+		transform: scale(1.04);
+	}
+}

@@ -1,0 +1,87 @@
+.weather {
+	.current {
+		padding-bottom: 1.6rem;
+
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+
+		&.light {
+			background: none;
+			box-shadow: none;
+			border-bottom: 1px solid #000;
+		}
+
+		&.dark {
+			background: none;
+			box-shadow: none;
+			border-bottom: 1px solid #fff;
+		}
+
+		h1 {
+			font-size: 2.2rem;
+			margin: 0;
+			margin-bottom: 0.6rem;
+		}
+
+		h3 {
+			margin: 0;
+			font-weight: normal;
+			font-size: 1rem;
+			span {
+				margin-right: 0.8rem;
+				font-weight: bold;
+				font-size: 1.5rem;
+			}
+		}
+
+		img {
+			width: 20%;
+		}
+	}
+
+	.forecast {
+		display: flex;
+		flex-direction: row;
+
+		align-items: center;
+
+		margin: 0;
+		padding: 0;
+		padding-top: 1.6rem;
+
+		list-style: none;
+
+		overflow-x: scroll;
+		scrollbar-width: thin;
+
+		.forecast-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			padding: 0 1.2rem;
+
+			.day {
+				font-size: 0.8rem;
+			}
+
+			.time {
+				font-size: 1rem;
+			}
+
+			.temp {
+				padding: 0.4rem 0;
+				overflow-wrap: normal;
+				font-weight: bold;
+				font-size: 1.2rem;
+			}
+
+			&:first-child {
+				padding-left: 0;
+			}
+		}
+	}
+}
